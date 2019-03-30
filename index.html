@@ -2,14 +2,18 @@
     <head>
         <script src="/socket.io/socket.io.js"></script>
         <script src="/client.js"></script>
+        <link rel="stylesheet" type="text/css" href="/index.css">
     </head>
     <body>
-        <h1>durachat</h1>
-        <form id="form">
-            <input id='comment' value=""/><button id="submit">comment</button>
-        </form>
-        <div>
-            <ul id="root"></ul>
+        <div id="dura-chat">
+            <div id="dura-chat-form">
+                <textarea id="form-textarea" class="dura-chat-form-textarea" value=""></textarea>
+                <button id="form-button" class="dura-chat-form-button">POST!</button>
+            </div>
+            
+            <div id="dura-chat-main" class="dura-box">
+                <ul id="root"></ul>
+            </div>
         </div>
     </body>
 </html>

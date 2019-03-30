@@ -1,8 +1,8 @@
 window.addEventListener('load', () => {
     const socket = io()
-    document.getElementById('submit').onclick = (event) => {
+    document.getElementById('form-button').onclick = (event) => {
         event.preventDefault()
-        const message = document.getElementById('comment').value
+        const message = document.getElementById('form-textarea').value
         // emit event for socket
         socket.emit('submit', message)
     }
