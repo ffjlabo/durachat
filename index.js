@@ -8,8 +8,8 @@ const io = require('socket.io')(server)
 const port = 3000
 
 // get
-app.get('/socket.js', (req, res) => {
-    res.sendFile(path.join(__dirname, 'socket.js'));
+app.get('/client.js', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client.js'));
 })
 
 app.get('/*', (req, res) => {
