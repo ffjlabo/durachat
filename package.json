@@ -4,5 +4,9 @@
   "main": "index.js",
   "repository": "https://github.com/ffjlabo/durachat.git",
   "author": "fujiwo <ffjlabo@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4",
+    "socket.io": "^2.2.0"
+  }
 }
