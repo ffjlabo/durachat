@@ -8,7 +8,13 @@ const io = require('socket.io')(server)
 const port = 3000
 
 // get
-app.get('/client.js', (req, res) => {
+app.get('/assets/:type/:filename', (req, res) => {
+    const filepath = path.join(__dirname, 'assets', req.params['type'], req.params['filename'])
+    console.log(filepath)
+    res.sendFile(filepath);
+})
+
+/*app.get('/client.js', (req, res) => {
     res.sendFile(path.join(__dirname, 'client.js'));
 })
 
@@ -18,7 +24,7 @@ app.get('/index.css', (req, res) => {
 
 app.get('/icon_sample.jpg', (req, res) => {
     res.sendFile(path.join(__dirname, 'icon_sample.jpg'));
-})
+})*/
 
 app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));

@@ -1,7 +1,6 @@
 console.log('once')
 window.addEventListener('load', () => {
     const socket = io()
-    console.log('inner')
     document.getElementById('form-button').onclick = (event) => {
         event.preventDefault()
         const message = document.getElementById('form-textarea').value
@@ -11,13 +10,6 @@ window.addEventListener('load', () => {
 
     // receive message from socket
     socket.on('add',(val) => {
-        /*const div = document.createElement('div')
-        div.innerText = val
-        const li = document.createElement('li')
-        li.appendChild(div)
-        const ul = document.getElementById('root')
-        ul.insertBefore(li, ul.firstElementChild)*/
-
         // 親のdiv
         const parent_div = document.createElement('div')
         parent_div.classList.add("dura-chat-plane")
@@ -28,7 +20,7 @@ window.addEventListener('load', () => {
 
         // アイコンの画像
         const chat_icon_img = document.createElement('img')
-        chat_icon_img.src = "./icon_sample.jpg"
+        chat_icon_img.src = "/assets/img/durachat-icon-10.jpg"
         chat_icon_img.classList.add("dura-chat-icon-img")
 
         // ユーザ名
