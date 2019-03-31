@@ -29,22 +29,62 @@
     outline: none;
 }
 
-.hidden {
-    display: none;
+.dura-chat-plane {
+    display: flex;
+    width: 100%;
+}
+
+.dura-chat-icon {
+    width: 65px;
+}
+
+.dura-chat-icon-img {
+    width: 65px;
+}
+
+.dura-chat-icon-name {
+    text-align: center;
+    word-wrap: break-word;
+    width: 100%;
+}
+
+.dura-chat-message {
+    margin-left: 40px;
 }
 
 #dura-chat {
-    white-space: pre-line;
+    white-space: pre;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 #dura-chat-form {
-    position: fixed;
     text-align: center;
     background-color: white;
     width: 100%;
     height: 180px;
 }
 
-#dura-chat {
-    position: fixed;
+#dura-chat-main {
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+/* リストのデザイン */
+ol {
+    list-style: none;
+}
+
+li {
+    padding: 5px;
 }

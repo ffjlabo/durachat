@@ -16,6 +16,10 @@ app.get('/index.css', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.css'));
 })
 
+app.get('/icon_sample.jpg', (req, res) => {
+    res.sendFile(path.join(__dirname, 'icon_sample.jpg'));
+})
+
 app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 })
