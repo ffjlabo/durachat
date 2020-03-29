@@ -7,6 +7,15 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.16.4",
-    "socket.io": "^2.2.0"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-is": "^16.13.1",
+    "socket.io": "^2.2.0",
+    "styled-components": "^5.0.1"
+  },
+  "devDependencies": {
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
   }
 }
