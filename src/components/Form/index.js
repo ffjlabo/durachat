@@ -5,7 +5,7 @@ import TextArea from "./TextArea";
 import Button from "./Button";
 
 const Wrapper = styled.div`
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   align-items: center;
 
@@ -16,8 +16,8 @@ const Wrapper = styled.div`
 
 const Form = () => (
   <Wrapper>
-      <TextArea />
-      <Button>POST!</Button>
+    <TextArea />
+    <Button>POST!</Button>
   </Wrapper>
 )
 
