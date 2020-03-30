@@ -5,8 +5,28 @@
   "repository": "https://github.com/ffjlabo/durachat.git",
   "author": "fujiwo <ffjlabo@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "webpack-dev-server --mode development --hot --inline",
+    "prod": "webpack-dev-server --mode production --hot --inline",
+    "build": "webpack --mode production"
+  },
   "dependencies": {
     "express": "^4.16.4",
-    "socket.io": "^2.2.0"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-is": "^16.13.1",
+    "socket.io": "^2.2.0",
+    "styled-components": "^5.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "file-loader": "^6.0.0",
+    "html-webpack-plugin": "^4.0.3",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
   }
 }
