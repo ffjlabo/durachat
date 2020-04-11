@@ -14,15 +14,12 @@ const LogsBody = styled.div`
   width: 640px;
 `;
 
-const Logs = () => (
+const Logs = ({data}) => (
   <Wrapper>
     <LogsBody>
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
+      {
+        data.map(({icon, name, text}) => <Post icon={icon} name={name} text={text} />)
+      }
     </LogsBody>
   </Wrapper>
 )
