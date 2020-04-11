@@ -15,20 +15,34 @@ const Wrapper = styled.div`
 `;
 
 const Chat = () => {
-  const chatLog = [
+  const [chatLog, setChatLog] = useState([
     {name: "甘楽", icon, text: "甘楽ちゃんでーーーーーす!!!!"},
     {name: "甘楽", icon, text: "甘楽ちゃんでーーーーーす!!!!"},
     {name: "甘楽", icon, text: "甘楽ちゃんでーーーーーす!!!!"},
     {name: "甘楽", icon, text: "甘楽ちゃんでーーーーーす!!!!"},
     {name: "甘楽", icon, text: "甘楽ちゃんでーーーーーす!!!!"},
     {name: "甘楽", icon, text: "甘楽ちゃんでーーーーーす!!!!"}
-  ];
+  ]);
 
   const avator = {name: "甘楽", icon};
 
+  const handleSubmit = (text) => {
+    addPost(avator, text);
+  };
+
+  const addPost = (avator, text) => {
+    const post = {
+      name: avator.name,
+      icon: avator.icon,
+      text
+    };
+
+    setChatLog([post, ...chatLog]);
+  }
+
   return (
     <Wrapper>
-      <Form />
+      <Form onSubmit={handleSubmit}/>
       <Logs data={chatLog}/>
     </Wrapper>
   );
