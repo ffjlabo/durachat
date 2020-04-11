@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 
 import TextArea from "./TextArea";
@@ -14,11 +14,19 @@ const Wrapper = styled.div`
   }
 `;
 
-const Form = () => (
-  <Wrapper>
-    <TextArea />
-    <Button>POST!</Button>
-  </Wrapper>
-)
+const Form = ({onSubmit}) => {
+  const [text, setText] = useState("");
+
+  const handleClick = () => {
+    onSubmit(text);
+  };
+
+  return (
+    <Wrapper>
+      <TextArea onChange={(e) => setText(e.target.value)}>{text}</TextArea>
+      <Button onClick={handleClick}>POST!</Button>
+    </Wrapper>
+  );
+};
 
 export default Form;
