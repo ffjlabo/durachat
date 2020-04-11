@@ -1,10 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import icon from "../../../../assets/img/durachat-icon-02.jpg";
 
-const Icon = styled.img.attrs({
-  src: icon
-})`
+const Icon = styled.img.attrs(({src}) => ({src}))`
   width: 60px;
   height: 60px;
 `;
@@ -19,10 +16,10 @@ const Wrapper = styled.div`
   vertical-align: top;
 `;
 
-const Avater = () => (
+const Avater = ({icon, name}) => (
   <Wrapper>
-    <Icon />
-    <Name>甘楽</Name>
+    <Icon src={icon}/>
+    <Name>{name}</Name>
   </Wrapper>
 );
 

@@ -1,23 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import styled from "styled-components";
 
-import Form from "./components/Form";
-import Logs from "./components/Logs";
+import Chat from "./pages/Chat";
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  justify-content: center;
-  bottom: 100vh;
-`;
-
-const App = () => (
-  <Wrapper>
-    <Form />
-    <Logs />
-  </Wrapper>
-);
-
+const App = () => <Chat />;
 ReactDOM.render(<App />, document.getElementById('app'));

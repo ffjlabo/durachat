@@ -13,11 +13,11 @@ const PostBody = styled.div`
   text-align: center;
 `;
 
-const Post = () => (
+const Post = ({icon, name, text}) => (
   <Wrapper>
     <PostBody>
-      <Avater />
-      <SpeechBubble>甘楽ちゃんでーーーーーす!!!!</SpeechBubble>
+      <Avater icon={icon} name={name} />
+      <SpeechBubble>{text}</SpeechBubble>
     </PostBody>
   </Wrapper>
 );
