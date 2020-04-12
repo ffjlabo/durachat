@@ -10,3 +10,10 @@ const port = 8080;
 server.listen(port, function(){
   console.log(`listening on ${port}`);
 });
+
+io.on("connection", (socket) => {
+
+  socket.on("addPost", (post) => {
+    io.emit("receivePost", post);
+  });
+});

@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from "styled-components";
+import io from "socket.io-client";
 
 import Form from "../components/Form";
 import Logs from "../components/Logs";
@@ -25,9 +26,10 @@ const Chat = () => {
   ]);
 
   const avator = {name: "甘楽", icon};
+  const socket = io(":8080");
 
   const handleSubmit = (text) => {
-    addPost(avator, text);
+    socket.emit("addPost", {avator, text});
   };
 
   const addPost = (avator, text) => {
@@ -38,7 +40,13 @@ const Chat = () => {
     };
 
     setChatLog([post, ...chatLog]);
-  }
+  };
+
+  useEffect(() => {
+    socket.on("receivePost", ({avator, text}) => {
+      addPost(avator, text);
+    });
+  }, []);
 
   return (
     <Wrapper>
