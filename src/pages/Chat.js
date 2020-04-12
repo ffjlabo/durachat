@@ -39,7 +39,7 @@ const Chat = () => {
       text
     };
 
-    setChatLog([post, ...chatLog]);
+    setChatLog(prev => [post, ...prev]);
   };
 
   useEffect(() => {
