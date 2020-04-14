@@ -16,22 +16,7 @@ const Wrapper = styled.div`
 `;
 
 const Chat = ({avator}) => {
-  const [chatLog, setChatLog] = useState([
-    {
-      type: "post",
-      content: {
-        name: "甘楽", 
-        icon, 
-        text: "甘楽ちゃんでーーーーーす!!!!"
-      }
-    },
-    {
-      type: "message",
-      content: {
-        text: "ーー甘楽さんが入室しました"
-      }
-    }
-  ]);
+  const [chatLog, setChatLog] = useState([]);
 
   const socket = io(":8080");
 
@@ -65,6 +50,12 @@ const Chat = ({avator}) => {
     socket.on("receivePost", ({avator, text}) => {
       addPost(avator, text);
     });
+
+    socket.on("receiveMessage", (text) => {
+      addMessage(text);
+    });
+
+    socket.emit("loginUser", avator.name);
   }, []);
 
   return (

@@ -12,6 +12,10 @@ server.listen(port, function(){
 });
 
 io.on("connection", (socket) => {
+  socket.on("loginUser", (name) => {
+    socket.name = name;
+    socket.emit("receiveMessage", `ーー${socket.name}が入室しました`);
+  });
 
   socket.on("addPost", (post) => {
     io.emit("receivePost", post);
