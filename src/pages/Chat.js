@@ -15,7 +15,7 @@ const Wrapper = styled.div`
   bottom: 100vh;
 `;
 
-const Chat = () => {
+const Chat = ({avator}) => {
   const [chatLog, setChatLog] = useState([
     {name: "甘楽", icon, text: "甘楽ちゃんでーーーーーす!!!!"},
     {name: "甘楽", icon, text: "甘楽ちゃんでーーーーーす!!!!"},
@@ -25,7 +25,6 @@ const Chat = () => {
     {name: "甘楽", icon, text: "甘楽ちゃんでーーーーーす!!!!"}
   ]);
 
-  const avator = {name: "甘楽", icon};
   const socket = io(":8080");
 
   const handleSubmit = (text) => {
