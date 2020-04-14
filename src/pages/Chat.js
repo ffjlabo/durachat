@@ -17,12 +17,20 @@ const Wrapper = styled.div`
 
 const Chat = ({avator}) => {
   const [chatLog, setChatLog] = useState([
-    {name: "甘楽", icon, text: "甘楽ちゃんでーーーーーす!!!!"},
-    {name: "甘楽", icon, text: "甘楽ちゃんでーーーーーす!!!!"},
-    {name: "甘楽", icon, text: "甘楽ちゃんでーーーーーす!!!!"},
-    {name: "甘楽", icon, text: "甘楽ちゃんでーーーーーす!!!!"},
-    {name: "甘楽", icon, text: "甘楽ちゃんでーーーーーす!!!!"},
-    {name: "甘楽", icon, text: "甘楽ちゃんでーーーーーす!!!!"}
+    {
+      type: "post",
+      content: {
+        name: "甘楽", 
+        icon, 
+        text: "甘楽ちゃんでーーーーーす!!!!"
+      }
+    },
+    {
+      type: "message",
+      content: {
+        text: "ーー甘楽さんが入室しました"
+      }
+    }
   ]);
 
   const socket = io(":8080");
@@ -32,14 +40,26 @@ const Chat = ({avator}) => {
   };
 
   const addPost = (avator, text) => {
-    const post = {
-      name: avator.name,
-      icon: avator.icon,
-      text
+    const log = {
+      type: "post",
+      content: {
+        name: avator.name,
+        icon: avator.icon,
+        text
+      }
     };
 
-    setChatLog(prev => [post, ...prev]);
+    setChatLog(prev => [log, ...prev]);
   };
+
+  const addMessage = (text) => {
+    const log = {
+      type: "message",
+      content: { text }
+    };
+
+    setChatLog(prev => [log, ...prev]);
+  }
 
   useEffect(() => {
     socket.on("receivePost", ({avator, text}) => {

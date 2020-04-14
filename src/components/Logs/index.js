@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import Post from "./Post";
+import Message from "./Message";
 
 const Wrapper = styled.div`
   display: flex;
@@ -18,7 +19,14 @@ const Logs = ({data}) => (
   <Wrapper>
     <LogsBody>
       {
-        data.map(({icon, name, text}) => <Post icon={icon} name={name} text={text} />)
+        data.map(({type, content}) => {
+          switch(type) {
+            case "post":
+              return <Post icon={content.icon} name={content.name} text={content.text} />;
+            case "message":
+              return <Message>{content.text}</Message>;
+          };
+        })
       }
     </LogsBody>
   </Wrapper>
