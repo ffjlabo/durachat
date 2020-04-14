@@ -17,6 +17,11 @@ io.on("connection", (socket) => {
     socket.emit("receiveMessage", `ーー${socket.name}が入室しました`);
   });
 
+  socket.on("disconnect", () => {
+    if (!socket.name) return;
+    socket.broadcast.emit("receiveMessage", `ーー${socket.name}が退室しました`);
+  });
+
   socket.on("addPost", (post) => {
     io.emit("receivePost", post);
   });
