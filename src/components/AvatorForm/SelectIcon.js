@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 import {iconImages} from "../../utils/iconSetting";
@@ -6,9 +6,11 @@ import {iconImages} from "../../utils/iconSetting";
 const Icon = styled.img.attrs(({src}) => ({src}))`
   width: 60px;
   height: 60px;
+  filter: brightness(${({selected}) => selected ? "100" : "70"}%);
+  border: solid 3px ${({selected}) => selected ? "white" : "black"};
 `;
 
-const SelectBox = ({src, setIcon}) => <Icon src={src} onClick={() => setIcon(src)}/>;
+const SelectBox = ({src, selected, setIcon}) => <Icon src={src} selected={selected} onClick={() => setIcon(src)}/>;
 
 const IconField = styled.div`
   display: flex;
@@ -20,11 +22,11 @@ const IconField = styled.div`
   max-height: 330px;
 `;
 
-const SelectIcon = ({icon, setIcon}) => {
+const SelectIcon = ({className, icon, setIcon}) => {
   return (
-    <IconField>
+    <IconField className={className}>
         {
-          iconImages.map((img) => <SelectBox src={img} setIcon={setIcon}/>)
+          iconImages.map((img) => <SelectBox src={img} selected={img == icon} setIcon={setIcon}/>)
         }
       </IconField>
   )

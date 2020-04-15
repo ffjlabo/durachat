@@ -4,14 +4,12 @@ import styled from "styled-components";
 import AvatorForm from "../components/AvatorForm";
 import Chat from "./Chat";
 
-const IconField = styled.div`
+const LoginWrapper = styled.div`
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-
-  max-width: 270px;
-  max-height: 330px;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
 `;
 
 const Dashboard = () => {
@@ -19,7 +17,10 @@ const Dashboard = () => {
   const [icon, setIcon] = useState("");
   const [entered, setEnterd] = useState(false);
 
-  return entered ? <Chat avator={{name, icon}}/> : <AvatorForm name={name} icon={icon} setName={setName} setIcon={setIcon} setEntered={setEnterd} />;
+  return entered ? <Chat avator={{name, icon}}/> : 
+    <LoginWrapper>
+      <AvatorForm name={name} icon={icon} setName={setName} setIcon={setIcon} setEntered={setEnterd} />;
+    </LoginWrapper>
 };
 
 export default Dashboard;

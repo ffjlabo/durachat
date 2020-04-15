@@ -7,8 +7,8 @@ const DefaultInput = styled.input`
   font-size: 20px;
 `;
 
-const Input = ({value, hidden, placeholder, onInputChange}) => {
-  return <DefaultInput hidden={hidden} onChange={onInputChange} value={value} placeholder={placeholder} />;
+const Input = ({className, value, hidden, placeholder, onInputChange}) => {
+  return <DefaultInput className={className} hidden={hidden} onChange={onInputChange} value={value} placeholder={placeholder} />;
 }
 
 export default Input;
