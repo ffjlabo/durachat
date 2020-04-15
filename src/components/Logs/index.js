@@ -8,11 +8,13 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   background: black;
-  overflow: scroll;
+  overflow-y: scroll;
+  height: 100%;
 `;
 
 const LogsBody = styled.div`
   width: 640px;
+  height: 100%;
 `;
 
 const Logs = ({data}) => (

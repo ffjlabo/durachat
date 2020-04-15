@@ -14,7 +14,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const Form = ({onSubmit}) => {
+const Form = ({className, onSubmit}) => {
   const [text, setText] = useState("");
 
   const handleClick = () => {
@@ -22,7 +22,7 @@ const Form = ({onSubmit}) => {
   };
 
   return (
-    <Wrapper>
+    <Wrapper className={className}>
       <TextArea onChange={(e) => setText(e.target.value)}>{text}</TextArea>
       <Button onClick={handleClick}>POST!</Button>
     </Wrapper>

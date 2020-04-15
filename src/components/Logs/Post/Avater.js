@@ -8,16 +8,19 @@ const Icon = styled.img.attrs(({src}) => ({src}))`
 
 const Name = styled.div`
   text-align: center;
+  word-wrap: break-word;
   color: white;
 `;
 
 const Wrapper = styled.div`
   display: inline-block;
+  text-align: center;
   vertical-align: top;
+  width: 100px;
 `;
 
-const Avater = ({icon, name}) => (
-  <Wrapper>
+const Avater = ({className, icon, name}) => (
+  <Wrapper className={className}>
     <Icon src={icon}/>
     <Name>{name}</Name>
   </Wrapper>
