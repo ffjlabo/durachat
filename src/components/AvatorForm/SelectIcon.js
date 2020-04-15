@@ -20,9 +20,9 @@ const IconField = styled.div`
   max-height: 330px;
 `;
 
-const SelectIcon = ({icon, setIcon}) => {
+const SelectIcon = ({className, icon, setIcon}) => {
   return (
-    <IconField>
+    <IconField className={className}>
         {
           iconImages.map((img) => <SelectBox src={img} setIcon={setIcon}/>)
         }
