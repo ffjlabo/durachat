@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import Avater from "./Avater";
 import SpeechBubble from "./SpeechBubble";
+import {iconColors} from "../../../utils/iconSetting";
 
 const Wrapper = styled.div`
   padding: 10px;
@@ -21,7 +22,7 @@ const Post = ({icon, name, text}) => (
   <Wrapper>
     <PostBody>
       <MarginAvator icon={icon} name={name} />
-      <SpeechBubble text={text} />
+      <SpeechBubble text={text} mainColor={iconColors[icon].main} subColor={iconColors[icon].sub} />
     </PostBody>
   </Wrapper>
 );

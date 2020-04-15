@@ -10,9 +10,12 @@ import icon from "../../assets/img/durachat-icon-02.jpg";
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-self: center;
-  justify-content: center;
-  bottom: 100vh;
+  height: 100vh;
+`;
+
+const MarginForm = styled(Form)`
+  margin-top: 10px;
+  margin-bottom: 10px;
 `;
 
 const Chat = ({avator}) => {
@@ -60,7 +63,7 @@ const Chat = ({avator}) => {
 
   return (
     <Wrapper>
-      <Form onSubmit={handleSubmit}/>
+      <MarginForm onSubmit={handleSubmit}/>
       <Logs data={chatLog}/>
     </Wrapper>
   );
