@@ -23,7 +23,7 @@ const MarginInput = styled(Input)`
 
 const AvatorForm = ({name, icon, setName, setIcon, setEntered}) => (
     <Wrapper>
-      <MarginSelectIcon setIcon={setIcon} />
+      <MarginSelectIcon icon={icon} setIcon={setIcon} />
       <Input hidden value={icon} onInputChange={(e) => setIcon(e.target.value)} />
       <MarginInput placeholder="name" value={name} onInputChange={(e) => setName(e.target.value)} />
       <Button onClick={() => setEntered(true)}>Enter</Button>
