@@ -19,8 +19,8 @@ const Wrapper = styled.div`
   width: 100px;
 `;
 
-const Avater = ({icon, name}) => (
-  <Wrapper>
+const Avater = ({className, icon, name}) => (
+  <Wrapper className={className}>
     <Icon src={icon}/>
     <Name>{name}</Name>
   </Wrapper>

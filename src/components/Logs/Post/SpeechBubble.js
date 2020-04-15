@@ -1,6 +1,8 @@
+import React from "react";
 import styled from "styled-components";
 
-const SpeechBubble = styled.div`
+const Text = styled.div`
+  position: relative;
   display: inline-block;
   vertical-align: top;
   padding: 15px 20px;
@@ -10,10 +12,27 @@ const SpeechBubble = styled.div`
   border-radius: 15px;
   border-color: white;
   border-width: 4px;
-  margin-left: 15px;
   max-width: 400px;
   word-wrap: break-word;
   white-space: pre-wrap;
+
+  &::before {
+    position: absolute;
+    top: 6px;
+    left: -13px;
+    content: "";
+    width: 15px;
+    height: 15px;
+    transform: skew(45deg);
+    background-color: #F9B329;
+    border-style: solid;
+    border-color: white;
+    border-width: 4px;
+    border-right: none;
+    border-bottom: none;
+  }
 `;
+
+const SpeechBubble = ({text}) => <Text>{text}</Text>;
 
 export default SpeechBubble;

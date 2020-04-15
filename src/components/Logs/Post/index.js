@@ -10,14 +10,18 @@ const Wrapper = styled.div`
 
 const PostBody = styled.div`
   display: inline-block;
-  text-align: center;
+  vertical-align: top;
+`;
+
+const MarginAvator = styled(Avater)`
+  margin-right: 10px;
 `;
 
 const Post = ({icon, name, text}) => (
   <Wrapper>
     <PostBody>
-      <Avater icon={icon} name={name} />
-      <SpeechBubble>{text}</SpeechBubble>
+      <MarginAvator icon={icon} name={name} />
+      <SpeechBubble text={text} />
     </PostBody>
   </Wrapper>
 );
