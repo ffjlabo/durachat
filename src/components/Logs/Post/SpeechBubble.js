@@ -11,6 +11,9 @@ const SpeechBubble = styled.div`
   border-color: white;
   border-width: 4px;
   margin-left: 15px;
+  max-width: 400px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
 `;
 
 export default SpeechBubble;
