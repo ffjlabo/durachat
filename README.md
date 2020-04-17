@@ -2,9 +2,9 @@
 
 アニメ デュラララで利用されているチャットシステムを再現してみました。
 
-<img src="https://raw.github.com/ffjlabo/durachat/demo/login.jpeg" />
-<img src="https://raw.github.com/ffjlabo/durachat/demo/chat-01.jpeg" />
-<img src="https://raw.github.com/ffjlabo/durachat/demo/chat-02.jpeg" />
+<img src="./demo/login.jpeg" alt="ログイン画面" />
+<img src="./demo/chat-01.jpeg" alt="チャット画面その1" />
+<img src="./demo/chat-02.jpeg" alt="チャット画面その2" />
 
 ## 技術スタック
 
