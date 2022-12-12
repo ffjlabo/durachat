@@ -11,7 +11,7 @@
     "build": "webpack --mode production"
   },
   "dependencies": {
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-is": "^16.13.1",
