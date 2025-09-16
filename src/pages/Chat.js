@@ -16,13 +16,18 @@ const MarginForm = styled(Form)`
   margin-bottom: 10px;
 `;
 
-const Chat = ({avator}) => {
+const Chat = ({avator, aiMode = false, aiModel = ''}) => {
   const [chatLog, setChatLog] = useState([]);
 
   const socket = io(':8080');
 
   const handleSubmit = (text) => {
-    socket.emit('addPost', {avator, text});
+    socket.emit('addPost', {
+      avator,
+      text,
+      aiMode,
+      aiModel,
+    });
   };
 
   const addPost = (avator, text) => {
